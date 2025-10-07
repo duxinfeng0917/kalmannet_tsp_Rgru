@@ -5,14 +5,14 @@ import numpy as np
 import random
 
 # Set random seeds for reproducibility
-# torch.manual_seed(42)
-# np.random.seed(42)
-# random.seed(42)
-# if torch.cuda.is_available():
-#     torch.cuda.manual_seed(42)
-#     torch.cuda.manual_seed_all(42)
-# torch.backends.cudnn.deterministic = True
-# torch.backends.cudnn.benchmark = False
+torch.manual_seed(17)
+np.random.seed(17)
+random.seed(17)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed(17)
+    torch.cuda.manual_seed_all(17)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
 
 from Simulations.Linear_sysmdl import SystemModel
 import Simulations.config as config
@@ -62,7 +62,7 @@ KnownRandInit_cv = True
 KnownRandInit_test = True
 # args.use_cuda = True # use GPU or not
 args.use_cuda = False # use GPU or not
-args.n_steps = 1  # Increased from 1 to 3000 for better training
+args.n_steps = 3000  # Increased from 1 to 3000 for better training
 args.n_batch = 10
 args.lr = 1e-4
 args.wd = 1e-4

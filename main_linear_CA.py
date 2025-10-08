@@ -4,13 +4,14 @@ from datetime import datetime
 import numpy as np
 import random
 
+seed_num = 10
 # Set random seeds for reproducibility
-torch.manual_seed(17)
-np.random.seed(17)
-random.seed(17)
+torch.manual_seed(seed_num)
+np.random.seed(seed_num)
+random.seed(seed_num)
 if torch.cuda.is_available():
-    torch.cuda.manual_seed(17)
-    torch.cuda.manual_seed_all(17)
+    torch.cuda.manual_seed(seed_num)
+    torch.cuda.manual_seed_all(seed_num)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
@@ -62,7 +63,7 @@ KnownRandInit_cv = True
 KnownRandInit_test = True
 # args.use_cuda = True # use GPU or not
 args.use_cuda = False # use GPU or not
-args.n_steps = 3000  # Increased from 1 to 3000 for better training
+args.n_steps = 4000  # Increased from 1 to 1000 for better training
 args.n_batch = 10
 args.lr = 1e-4
 args.wd = 1e-4
